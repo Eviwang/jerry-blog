@@ -64,7 +64,7 @@
             </a>
           </div>
           <div class="sidebar-feed">
-            <a href="javascript:void(0)">RSS</a>
+            <a href="javascript:void(0)"><i class="icon-rss2"></i> RSS</a>
           </div>
           <div class="sitebar-contact">
             <a class="item" href="javascript:void(0)"><i class="icon-github"></i>&nbsp;GitHub</a>
@@ -134,12 +134,42 @@
 
     </div>
 
+    <nav class="fixed-nav">
+        <ul>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="icon-home3"></i>
+              首页
+            </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="icon-info"></i>
+              关于
+              </a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="icon-list2"></i>
+              文章</a>
+          </li>
+          <li>
+            <a href="javascript:void(0)">
+              <i class="icon-books"></i>
+              分类</a>
+          </li>
+        </ul>
+      </nav>
+
   </div>
+
+
+  
 </template>
 
 <script>
 export default {
-  data() {
+  data () {
     return {
       txt: 'hello !'
     }
@@ -176,6 +206,7 @@ $black-gray = #999
     }
 
     .nav{
+      padding 20px 0
       background: $white
       shadow()
       margin-bottom 20px
@@ -365,6 +396,38 @@ $black-gray = #999
     text-align center
     color $black
     margin-top 20px
+  }  
+}
+
+.fixed-nav{
+  display none
+  position fixed
+  bottom 0
+  left 0
+  right 0
+  background $white
+  ul{
+    display flex    
+    align-items center
+    border-top solid 2px $gray    
+    box-shadow 0 -2px 1px 0 rgba(0,0,0,0.06)
+    li{
+      flex 1                      
+      a{
+        padding 10px 0 0 0
+        i{
+          display block
+        }
+        line-height 2     
+        display block
+        text-align center
+        &:hover{
+          background #eee
+          border-radius 5px
+        }
+      }
+      
+    }
   }
 }
 
